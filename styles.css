@@ -1,0 +1,254 @@
+
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #000;
+    color: #0f0;
+    margin: 0;
+    padding: 0;
+}
+
+body.dark-mode {
+    background: #111;
+    color: #fff;
+}
+
+.theme-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 1.5em;
+    transition: background-color 0.3s ease;
+}
+
+.theme-button:hover {
+    background-color: #555;
+}
+
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+header #dark-mode-toggle {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #0f0;
+    border: none;
+    cursor: pointer;
+}
+
+header #dark-mode-toggle:hover {
+    background: #0b0;
+}
+
+.terminal {
+    background: #000;
+    color: #0f0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    max-height: 600px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+#terminal-content {
+    white-space: pre-wrap;
+    
+}
+
+.input-line {
+    display: flex;
+}
+
+.prompt {
+    margin-right: 10px;
+}
+
+.input-line input {
+    background: transparent;
+    border: none;
+    color: #0f0;
+    outline: none;
+    flex: 1;
+}
+
+.command {
+    color: #0ff; /* Adjust color as needed */
+    font-weight: bold;
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.certification-info, .about-info {
+    background: #111;
+    color: #0f0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.certification-info a, .about-info a {
+    color: #0ff;
+    text-decoration: none;
+}
+
+.certification-info a:hover, .about-info a:hover {
+    text-decoration: underline;
+}
+.contact-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.contact-icons a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.contact-icons img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.contact-icons span {
+    opacity: 0; /* Initially hidden */
+    margin-left: 10px; /* Spacing between icon and text */
+    white-space: nowrap;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-20px); /* Moves text off-screen */
+}
+
+.contact-icons a:hover span {
+    opacity: 1; /* Text becomes visible on hover */
+    transform: translateX(0); /* Slides text into view */
+}
+
+.contact-icons a:hover img {
+    transform: scale(1.2); /* Icon scales up on hover */
+    opacity: 0.8; /* Slightly fade the icon */
+}
+
+.contact-icons a:hover::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    from {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    to {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
+
+.iconn {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.terminal a {
+    color: rgb(0, 255, 30);
+    text-decoration: none;
+}
+
+.terminal a:hover {
+    text-decoration: underline;
+}
+
+.certification-link {
+    color: rgb(9, 255, 0);
+    cursor: pointer;
+}
+
+.certification-link:hover {
+    text-decoration: underline;
+}
+
+#info-display {
+    font-size: 1.1rem; /* Adjust this value as needed */
+    line-height: 1.5;  /* Optional: Adjust the line height for better readability */
+}
