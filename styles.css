@@ -251,4 +251,35 @@ header #dark-mode-toggle:hover {
 #info-display {
     font-size: 1.1rem; /* Adjust this value as needed */
     line-height: 1.5;  /* Optional: Adjust the line height for better readability */
+    padding: 20px;
+    position: relative;
+    z-index: 10; /* Ensure it appears above other content */
+    background: rgba(0, 0, 0, 0.093); /* Transparent background with slight black tint */
+    border-radius: 8px;
+    color: rgb(0, 255, 30); /* White text color for better contrast */
 }
+
+
+#info-display h2 {
+    margin-top: 0;
+    border-bottom: 2px solid rgb(0, 255, 30); /* Underline the heading for emphasis */
+    padding-bottom: 10px;
+}
+
+#info-display .education-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#info-display .education-item img {
+    width: 40px; /* Size of the icon */
+    height: 40px; /* Size of the icon */
+    margin-right: 10px;
+}
+
+#info-display .education-item p {
+    margin: 0;
+    font-size: 16px;
+}
+

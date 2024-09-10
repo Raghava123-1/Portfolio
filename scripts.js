@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const terminalInput = document.getElementById('terminal-input');
     const terminalContent = document.getElementById('terminal-content');
-    const infoDisplay = document.getElementById('info-display');
+    const infoDisplay = document.getElementById('info-display');  // Ensure this is correct
 
     terminalInput.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             case '2':
                 return displayCertificationInfo();
             case '3':
-                return 'Displaying education details...';
+                return displayEducationInfo();  // Properly linked
             case '4':
                 return 'Displaying projects and documentations...';
             case '5':
@@ -85,6 +85,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return 'Detailed information displayed below.';
     };
+
+    const displayEducationInfo = () => {
+        infoDisplay.innerHTML = `
+            <h2>Education Details</h2>
+            <div class="education-info">
+                <div class="education-item">
+                    <span class="icon">&#x1F393;</span> <strong>School:</strong> EXCELLENT E/M HIGH SCHOOL, MANUGURU
+                </div>
+                <div class="education-item">
+                    <span class="icon">&#x1F4C8;</span> <strong>Grade:</strong> 10
+                </div>
+                <div class="education-item">
+                    <span class="icon">&#x1F393;</span> <strong>Intermediate:</strong> NARAYANA JR COLLEGE, VIJAYAWADA
+                </div>
+                <div class="education-item">
+                    <span class="icon">&#x1F4C8;</span> <strong>Percentage:</strong> 97.6%
+                </div>
+                <div class="education-item">
+                    <span class="icon">&#x1F393;</span> <strong>B.Tech:</strong> VNR VJIET, HYDERABAD
+                </div>
+                <div class="education-item">
+                    <span class="icon">&#x1F4C8;</span> <strong>Branch:</strong> CSE - Cyber Security
+                </div>
+                <div class="education-item">
+                    <span class="icon">&#x1F4C8;</span> <strong>Year:</strong> 3rd Year
+                </div>
+                <div class="education-item">
+                    <span class="icon">&#x1F4C8;</span> <strong>CGPA:</strong> 9.38
+                </div>
+            </div>
+        `;
+        infoDisplay.style.display = 'block'; // Display info
+        return 'Education details displayed below.';
+    };
 });
-
-
