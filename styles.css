@@ -282,4 +282,71 @@ header #dark-mode-toggle:hover {
     margin: 0;
     font-size: 16px;
 }
+/* Center-align the category headings */
+.skills-heading {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px; /* Adjust heading size */
+    color: #00ff00; /* Terminal green color */
+}
 
+/* Subheadings styling for each category */
+.category-heading {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 25px;
+    color: #00ff00;
+}
+
+/* Flexbox arrangement for each category section */
+.skills-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between categories */
+}
+
+/* Flexbox arrangement for icons within each category */
+.skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Increased space between icons */
+    justify-content: center;
+    opacity: 0; /* Initial opacity for fade-in */
+    animation: fadeIn 2s forwards; /* Fade-in animation */
+}
+
+/* Style for each icon */
+.icon {
+    width: 100px; /* Adjusted icon size */
+    height: 100px;
+    border-radius: 50%; /* Make icons circular */
+    background-color: rgba(0, 255, 0, 0.1); /* Transparent terminal green */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5); /* Glowing effect */
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon img {
+    width: 80%; /* Adjust to fit icon size */
+    height: 80%;
+}
+
+/* Hover effect to slightly enlarge icons */
+.icon:hover {
+    transform: scale(1.1);
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Slide effect from below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

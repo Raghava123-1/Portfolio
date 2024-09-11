@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             case '4':
                 return 'Displaying projects and documentations...';
             case '5':
-                return 'Displaying skills information...';
+                return displaySkillsInfo();
             case '6':
                 return 'Displaying achievements information...';
             case '7':
@@ -119,4 +119,66 @@ document.addEventListener('DOMContentLoaded', () => {
         infoDisplay.style.display = 'block'; // Display info
         return 'Education details displayed below.';
     };
+
+    const displaySkillsInfo = () => {
+        infoDisplay.innerHTML = `
+            <h2 class="skills-heading">Skills</h2>
+            <div class="skills-section">
+                <div class="skills-category">
+                    <h3 class="category-heading">Scripting Languages</h3>
+                    <div class="skills-icons">
+                        <img src="../icons/html5-logo-240.png" alt="HTML" title="HTML" class="icon">
+                        <img src="../icons/css3-logo-240.png" alt="CSS" title="CSS" class="icon">
+                        <img src="../icons/bootstrap-logo-240.png" alt="Bootstrap" title="Bootstrap" class="icon">
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-heading">Frameworks</h3>
+                    <div class="skills-icons">
+                        <img src="../icons/flask-logo-240.png" alt="Flask" title="Flask" class="icon">
+                        <img src="../icons/icons8-express-js-480.png" alt="Express.js" title="Express.js" class="icon">
+                        <img src="icons/react-logo-240.png" alt="React.js" title="React.js" class="icon">
+                        <img src="../icons/nodejs-logo-240.png" alt="Node.js" title="Node.js" class="icon">
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-heading">Programming Languages</h3>
+                    <div class="skills-icons">
+                        <img src="icons/letter-c.png" alt="C" title="C" class="icon">
+                        <img src="icons/c-plus-plus-logo-240.png" alt="C++" title="C++" class="icon">
+                        <img src="icons/python-logo-240.png" alt="Python" title="Python" class="icon">
+                        <img src="../icons/javascript-logo-240.png" alt="JavaScript" title="JavaScript" class="icon">
+                        <img src="icons/java-logo-240.png" alt="Java" title="Java" class="icon">
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-heading">Databases</h3>
+                    <div class="skills-icons">
+                        <img src="icons/sql (1).png" alt="SQL" title="SQL" class="icon">
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-heading">Version Control</h3>
+                    <div class="skills-icons">
+                        <img src="icons/git-logo-240.png" alt="Git" title="Git" class="icon">
+                        <img src="icons/github-logo-240.png" alt="GitHub" title="GitHub" class="icon">
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <h3 class="category-heading">Operating Systems</h3>
+                    <div class="skills-icons">
+                        <img src="icons/icons8-windows-250.png" alt="Windows 11" title="Windows 11" class="icon">
+                        <img src="icons/windows-logo-240.png" alt="Windows 10" title="Windows 10" class="icon">
+                        <img src="icons/icons8-kali-linux-240.png" alt="Kali" title="Kali" class="icon">
+                        <img src="icons/linux.png" alt="Linux" title="Linux" class="icon">
+                    </div>
+                </div>
+            </div>
+        `;
+        return 'Skills information displayed below.';
+    };
+    
+    
+    
+    
 });
