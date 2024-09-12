@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             case '2':
                 return displayCertificationInfo();
             case '3':
-                return displayEducationInfo();  // Properly linked
+                return displayEducationInfo();  
             case '4':
                 return 'Displaying projects and documentations...';
             case '5':
