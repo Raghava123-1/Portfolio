@@ -12,7 +12,47 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-
+    const texts = ["Cyber Security Student", "Full Stack Developer"];
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let letter = '';
+    let isDeleting = false;
+    
+    function type() {
+        // Get the current text from the array
+        currentText = texts[count];
+    
+        // Handle typing and erasing logic
+        if (!isDeleting) {
+            letter = currentText.slice(0, ++index); // Typing letters forward
+        } else {
+            letter = currentText.slice(0, --index); // Deleting letters backward
+        }
+    
+        // Update the dynamic-text element with the current substring
+        document.getElementById('dynamic-text').textContent = letter;
+    
+        // Typing phase completed, start erasing after a delay
+        if (!isDeleting && letter.length === currentText.length) {
+            setTimeout(() => isDeleting = true, 2000); // Start erasing after 2 seconds
+        } 
+        // Erasing phase completed, switch to the next text
+        else if (isDeleting && letter.length === 0) {
+            isDeleting = false; // Reset to start typing the next text
+            count = (count + 1) % texts.length; // Loop back to the first text after the last one
+        }
+    
+        // Adjust typing/erasing speed
+        const typingSpeed = isDeleting ? 100 : 150;
+        setTimeout(type, typingSpeed); // Adjust the typing/erasing speed dynamically
+    }
+    
+    // Start the typing animation when the page loads
+    window.onload = () => {
+        setTimeout(type, 500); // Small delay before starting the typing
+    };
+    
     const handleCommand = (command) => {
         const response = getResponse(command);
         terminalContent.innerHTML += `<div><span class="prompt">raghava@portfolio:~$</span> ${command}</div>`;
@@ -91,28 +131,28 @@ document.addEventListener('DOMContentLoaded', () => {
             <h2>Education Details</h2>
             <div class="education-info">
                 <div class="education-item">
-                    <span class="icon">&#x1F393;</span> <strong>School:</strong> EXCELLENT E/M HIGH SCHOOL, MANUGURU
+                    <span class="icon1">&#x1F393;</span> <strong>School:</strong> EXCELLENT E/M HIGH SCHOOL, MANUGURU
                 </div>
                 <div class="education-item">
-                    <span class="icon">&#x1F4C8;</span> <strong>Grade:</strong> 10
+                    <span class="icon1">&#x1F4C8;</span> <strong>Grade:</strong> 10
                 </div>
                 <div class="education-item">
-                    <span class="icon">&#x1F393;</span> <strong>Intermediate:</strong> NARAYANA JR COLLEGE, VIJAYAWADA
+                    <span class="icon1">&#x1F393;</span> <strong>Intermediate:</strong> NARAYANA JR COLLEGE, VIJAYAWADA
                 </div>
                 <div class="education-item">
-                    <span class="icon">&#x1F4C8;</span> <strong>Percentage:</strong> 97.6%
+                    <span class="icon1">&#x1F4C8;</span> <strong>Percentage:</strong> 97.6%
                 </div>
                 <div class="education-item">
-                    <span class="icon">&#x1F393;</span> <strong>B.Tech:</strong> VNR VJIET, HYDERABAD
+                    <span class="icon1">&#x1F393;</span> <strong>B.Tech:</strong> VNR VJIET, HYDERABAD
                 </div>
                 <div class="education-item">
-                    <span class="icon">&#x1F4C8;</span> <strong>Branch:</strong> CSE - Cyber Security
+                    <span class="icon1">&#x1F4C8;</span> <strong>Branch:</strong> CSE - Cyber Security
                 </div>
                 <div class="education-item">
-                    <span class="icon">&#x1F4C8;</span> <strong>Year:</strong> 3rd Year
+                    <span class="icon1">&#x1F4C8;</span> <strong>Year:</strong> 3rd Year
                 </div>
                 <div class="education-item">
-                    <span class="icon">&#x1F4C8;</span> <strong>CGPA:</strong> 9.38
+                    <span class="icon1">&#x1F4C8;</span> <strong>CGPA:</strong> 9.38
                 </div>
             </div>
         `;
