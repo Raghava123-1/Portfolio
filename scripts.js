@@ -218,6 +218,30 @@ document.addEventListener('DOMContentLoaded', () => {
         return 'Skills information displayed below.';
     };
     
+    const video = document.getElementById('openingVideo');
+    const skipButton = document.getElementById('skipButton');
+    const mainContent = document.getElementById('mainContent');
+    const videoContainer = document.querySelector('.video-container');
+    
+    // Set playback speed to 2x
+    video.playbackRate = 2.5;
+    
+    // Function to fade out the video and show the main content
+    function showMainContent() {
+        videoContainer.classList.add('fade-out');
+        
+        // Wait for the fade-out to complete (1.5s) and then show the main content
+        setTimeout(() => {
+            videoContainer.style.display = 'none';
+            mainContent.style.display = 'block';
+        }, 1500); // 1.5s matching the CSS transition
+    }
+    
+    // Listen for the video end event
+    video.addEventListener('ended', showMainContent);
+    
+    // Skip button allows the user to skip the video
+    skipButton.addEventListener('click', showMainContent);
     
     
     
