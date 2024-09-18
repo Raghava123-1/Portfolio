@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
-    const texts = ["Cyber Security Student", "Full Stack Developer"];
+    const texts = ["Cyber Security Student", "MERN Stack Developer","Ethical Hacker"];
     let count = 0;
     let index = 0;
     let currentText = '';
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
         // Typing phase completed, start erasing after a delay
         if (!isDeleting && letter.length === currentText.length) {
-            setTimeout(() => isDeleting = true, 2000); // Start erasing after 2 seconds
+            setTimeout(() => isDeleting = true, 1500); // Start erasing after 2 seconds
         } 
         // Erasing phase completed, switch to the next text
         else if (isDeleting && letter.length === 0) {
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             case '6':
                 return 'Displaying achievements information...';
             case '7':
-                return 'Displaying roles and responsibilities information...';
+                return displayRolesAndResponsibilities();
             default:
                 return 'Command not recognized. Please enter a number between 1 and 7.';
         }
@@ -217,6 +217,20 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         return 'Skills information displayed below.';
     };
+
+    const displayRolesAndResponsibilities = () => {
+        infoDisplay.innerHTML = `
+            <h2>Roles & Responsibilities</h2>
+            <ul>
+                <li>1. Vice President in the College Cyber Security Club "Garuda Vigilance"</li>
+                <li>2. Volunteer in NSS Club</li>
+                <li>3. Member in Cyber Secured India Group</li>
+                <li>4. Member in R3X CTF Group</li>
+            </ul>
+        `;
+        return 'Roles and responsibilities information displayed below.';
+    };
+    
     
     const video = document.getElementById('openingVideo');
     const skipButton = document.getElementById('skipButton');
