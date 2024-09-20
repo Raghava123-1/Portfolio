@@ -72,12 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
             case '3':
                 return displayEducationInfo();  
             case '4':
-                return 'Displaying projects and documentations...';
+                return showProjects();
             case '5':
                 return displaySkillsInfo();
             case '6':
-                return 'Displaying achievements information...';
-            case '7':
                 return displayRolesAndResponsibilities();
             default:
                 return 'Command not recognized. Please enter a number between 1 and 7.';
@@ -105,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayCertificationInfo = () => {
         const certifications = [
             { name: 'Google Cybersecurity Professional Certificate', url: 'https://drive.google.com/file/d/1mkEw4c8RDvFoPO9WwfgUOQPfFfc7sDB-/view?usp=sharing' },
+            { name: 'Smart Interviews Phase 1', url: 'https://drive.google.com/file/d/1Fxe-DALmdpNUBneqogNcUqJX5E-OpGfm/view?usp=sharing' },
             { name: 'Tata Group Cybersecurity Analyst Completion Certificate', url: 'https://drive.google.com/file/d/1D71Yih3fUKD_yb5D8bhZ4mdWMxf13EiA/view?usp=sharing' },
             { name: 'CDAC - Pragmatic Approach to Cyber Security', url: 'https://drive.google.com/file/d/1AEqqndEuFD8qK2WxawSH__kxPLRvivU4/view?usp=sharing' },
             { name: 'Google AI Essentials', url: 'https://www.credly.com/badges/590868e7-5c3c-4099-bfd7-62191ff301c5/public_url' },
@@ -159,6 +158,40 @@ document.addEventListener('DOMContentLoaded', () => {
         infoDisplay.style.display = 'block'; // Display info
         return 'Education details displayed below.';
     };
+
+
+
+    const showProjects = () => {
+        infoDisplay.innerHTML = `
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Smart Agro - Weather Alert Website</h3>
+                    <p>Website which sends alerts to farmers by call and notifications on bad weather 24 hours in advance.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Secured QR Generator</h3>
+                    <p>Step-authentication type of security for QR codes.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Fields2Fork-App (under development)</h3>
+                    <p>A mobile app for direct market access for farmers, connecting them with consumers and retailers to manage transactions.</p>
+                </div>
+            </div>
+            <div class="coming-soon">
+                <p>Cyber Security projects will be displayed soon...</p>
+            </div>`;
+        
+        infoDisplay.style.display = 'block'; // Display the info section
+        return 'Projects details displayed below.';
+    };
+    
+
+
+
+
+
+
+
 
     const displaySkillsInfo = () => {
         infoDisplay.innerHTML = `
@@ -238,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const videoContainer = document.querySelector('.video-container');
     
     // Set playback speed to 2x
-    video.playbackRate = 2.5;
+    video.playbackRate = 3.5;
     
     // Function to fade out the video and show the main content
     function showMainContent() {
@@ -248,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             videoContainer.style.display = 'none';
             mainContent.style.display = 'block';
-        }, 1500); // 1.5s matching the CSS transition
+        }, 1000); // 1.5s matching the CSS transition
     }
     
     // Listen for the video end event
