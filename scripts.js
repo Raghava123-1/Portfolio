@@ -84,7 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const displayAboutInfo = () => {
         infoDisplay.innerHTML = `
-            <h2>About Me</h2>
+      <div class="about-container">
+        <div class="about-content">
+          <h2>About Me</h2>
             <p>Hello! I am a dedicated and ambitious Computer Science student currently pursuing my BTech at VNRVJIET, with an expected graduation in 2026. My primary interest lies in the field of Cyber Security, where I am driven by a passion for ethical hacking and protecting systems against cyber threats.</p>
             <p>I thrive on solving complex security challenges and am continuously expanding my knowledge and skills in this ever-evolving field. My coursework and projects have equipped me with a strong foundation in various aspects of computer science and cyber security, including:</p>
             <ul>
@@ -96,7 +98,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </ul>
             <p>I am always eager to learn and explore new technologies, participate in hackathons, and collaborate on innovative projects. My goal is to contribute to a safer digital world by leveraging my skills and knowledge in cyber security.</p>
             <p>Feel free to connect with me for discussions on cyber security, collaboration opportunities, or simply to network!</p>
-        `;
+        </div>
+        <div class="photo-container">
+          <img src="../assests/Photo3.jpg" alt="Photo" class="about-photo" />
+        </div>
+      </div>
+    `;
         return 'Detailed information displayed below.';
     };
 
