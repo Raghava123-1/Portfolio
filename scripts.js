@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const terminalInput = document.getElementById('terminal-input');
     const terminalContent = document.getElementById('terminal-content');
-    const infoDisplay = document.getElementById('info-display');  // Ensure this is correct
-
+    const infoDisplay = document.getElementById('info-display'); 
     terminalInput.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
             const inputValue = terminalInput.value.trim();
@@ -20,37 +19,28 @@ document.addEventListener('DOMContentLoaded', () => {
     let isDeleting = false;
     
     function type() {
-        // Get the current text from the array
+        
         currentText = texts[count];
-    
-        // Handle typing and erasing logic
         if (!isDeleting) {
-            letter = currentText.slice(0, ++index); // Typing letters forward
+            letter = currentText.slice(0, ++index); 
         } else {
-            letter = currentText.slice(0, --index); // Deleting letters backward
+            letter = currentText.slice(0, --index); 
         }
     
-        // Update the dynamic-text element with the current substring
         document.getElementById('dynamic-text').textContent = letter;
     
-        // Typing phase completed, start erasing after a delay
         if (!isDeleting && letter.length === currentText.length) {
-            setTimeout(() => isDeleting = true, 1500); // Start erasing after 2 seconds
+            setTimeout(() => isDeleting = true, 1500); 
         } 
-        // Erasing phase completed, switch to the next text
         else if (isDeleting && letter.length === 0) {
-            isDeleting = false; // Reset to start typing the next text
-            count = (count + 1) % texts.length; // Loop back to the first text after the last one
+            isDeleting = false; 
+            count = (count + 1) % texts.length; 
         }
-    
-        // Adjust typing/erasing speed
         const typingSpeed = isDeleting ? 100 : 150;
-        setTimeout(type, typingSpeed); // Adjust the typing/erasing speed dynamically
+        setTimeout(type, typingSpeed); 
     }
-    
-    // Start the typing animation when the page loads
     window.onload = () => {
-        setTimeout(type, 500); // Small delay before starting the typing
+        setTimeout(type, 500); 
     };
     
     const handleCommand = (command) => {
@@ -162,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `;
-        infoDisplay.style.display = 'block'; // Display info
+        infoDisplay.style.display = 'block'; 
         return 'Education details displayed below.';
     };
 
@@ -188,17 +178,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>Cyber Security projects will be displayed soon...</p>
             </div>`;
         
-        infoDisplay.style.display = 'block'; // Display the info section
+        infoDisplay.style.display = 'block'; 
         return 'Projects details displayed below.';
     };
     
-
-
-
-
-
-
-
 
     const displaySkillsInfo = () => {
         infoDisplay.innerHTML = `
@@ -277,24 +260,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.getElementById('mainContent');
     const videoContainer = document.querySelector('.video-container');
     
-    // Set playback speed to 2x
     video.playbackRate = 3.5;
     
-    // Function to fade out the video and show the main content
     function showMainContent() {
         videoContainer.classList.add('fade-out');
         
-        // Wait for the fade-out to complete (1.5s) and then show the main content
         setTimeout(() => {
             videoContainer.style.display = 'none';
             mainContent.style.display = 'block';
-        }, 1000); // 1.5s matching the CSS transition
+        }, 1000); 
     }
-    
-    // Listen for the video end event
     video.addEventListener('ended', showMainContent);
-    
-    // Skip button allows the user to skip the video
     skipButton.addEventListener('click', showMainContent);
     
     

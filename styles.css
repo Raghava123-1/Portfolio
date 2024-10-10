@@ -15,11 +15,10 @@
     border-right: 2px solid #00FF00;
     white-space: nowrap;
     overflow: hidden;
-    height: 30px; /* Keeps the text in a fixed position */
-    /* Remove width-based animation */
+    height: 30px; 
 }
 
-/* Blinking cursor animation */
+
 @keyframes blink {
     50% { border-color: transparent; }
 }
@@ -28,7 +27,7 @@
     animation: blink 0.75s step-end infinite;
 }
 
-/* Style the video to cover the whole screen */
+
 body, html {
     margin: 0;
     padding: 0;
@@ -48,7 +47,7 @@ body, html {
     align-items: center;
     background-color: black;
     opacity: 1;
-    transition: opacity 2s ease; /* Transition for fade-out effect */
+    transition: opacity 2s ease; 
 }
 video {
     width: 100%;
@@ -65,7 +64,7 @@ video {
     font-size: 16px;
     display: flex;
     align-items: center;
-    gap: 8px; /* Space between icon and text */
+    gap: 8px; 
     cursor: pointer;
 }
 
@@ -77,7 +76,6 @@ video {
     vertical-align: middle;
 }
 
-/* After the video, the main content will be displayed */
 #mainContent {
     padding: 20px;
     text-align: center;
@@ -192,7 +190,7 @@ header #dark-mode-toggle:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px; /* Adjusts the space between the text and the photo */
+    gap: 30px; 
   }
   
   .about-content {
@@ -208,20 +206,20 @@ header #dark-mode-toggle:hover {
   }
   
   .about-photo {
-    width: 350px; /* Adjust the size as necessary */
-    height: 350px; /* Same as width for the circle */
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures image fits the circle without distortion */
-    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effect */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
-    overflow: hidden; /* Ensures image doesn't break when scaling */
-    border: 5px solid transparent; /* Transparent border for better effect */
+    width: 350px; 
+    height: 350px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+    overflow: hidden; 
+    border: 5px solid transparent; 
   }
   
   .about-photo:hover {
-    transform: scale(1.025); /* Slightly enlarges the photo on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 255, 0, 0.7); /* Glow effect added */
-    border: 5px solid rgba(0, 255, 0, 0.7); /* Greenish glowing border effect */
+    transform: scale(1.025);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 255, 0, 0.7); 
+    border: 5px solid rgba(0, 255, 0, 0.7); 
   }
   
   
@@ -247,7 +245,7 @@ header #dark-mode-toggle:hover {
 }
 
 .command {
-    color: #0ff; /* Adjust color as needed */
+    color: #0ff; 
     font-weight: bold;
 }
 
