@@ -101,9 +101,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const certifications = [
             { name: 'Google Cybersecurity Professional Certificate', url: 'https://drive.google.com/file/d/1mkEw4c8RDvFoPO9WwfgUOQPfFfc7sDB-/view?usp=sharing' },
             { name: 'Smart Interviews Phase 1', url: 'https://drive.google.com/file/d/1Fxe-DALmdpNUBneqogNcUqJX5E-OpGfm/view?usp=sharing' },
+            { name: 'NPTEL Cloud Computing Course', url: 'https://drive.google.com/file/d/1jkgy2Ds4ScvYi23rFv523AjKmrpdkcjr/view?usp=sharing' },
+            { name: 'Research Paper - International Conference on Emerging Trends in Intelligent Computing Techniques (ICETICT-2024)', url: 'https://drive.google.com/file/d/1U4v9Fi93doZCeeMcMxVZWhMtnmcRPXA9/view?usp=sharing' },
             { name: 'Tata Group Cybersecurity Analyst Completion Certificate', url: 'https://drive.google.com/file/d/1D71Yih3fUKD_yb5D8bhZ4mdWMxf13EiA/view?usp=sharing' },
             { name: 'CDAC - Pragmatic Approach to Cyber Security', url: 'https://drive.google.com/file/d/1AEqqndEuFD8qK2WxawSH__kxPLRvivU4/view?usp=sharing' },
+            { name: 'VNR Cyber Warzone 2.0', url: 'https://drive.google.com/file/d/1WE4FLbeBBq1KItb6GVWgDHf4DM0_tbhY/view?usp=sharing' },
+            { name: 'Cybersecurity Fundamentals by IBM SkillsBuild', url: 'https://drive.google.com/file/d/1lU-EZ0x1rLfeYatMrqau-qJUwviTwe7g/view?usp=sharing' },
             { name: 'Google AI Essentials', url: 'https://www.credly.com/badges/590868e7-5c3c-4099-bfd7-62191ff301c5/public_url' },
+            { name: 'The Indo-Dutch Cyber Security School seventh edition', url: 'https://drive.google.com/file/d/15rWE0gW-rXphItkEcFZog3iAejDiJ5Yh/view?usp=sharing' },
             { name: 'Nexus Elites CTF 2024', url: 'https://drive.google.com/file/d/180RZjabL_te5KU_ZwJ4yZJK3fWbOl2_u/view?usp=sharing' },
             { name: 'Cyber Suraksha - Tata Strive & Microsoft', url: 'https://drive.google.com/file/d/1TUFiqH-sIwWLMODO63HMQ6E98sWVODxb/view?usp=sharing' },
         ];
@@ -148,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="icon1">&#x1F4C8;</span> <strong>Year:</strong> 3rd Year
                 </div>
                 <div class="education-item">
-                    <span class="icon1">&#x1F4C8;</span> <strong>CGPA:</strong> 9.38
+                    <span class="icon1">&#x1F4C8;</span> <strong>CGPA:</strong> 9.35
                 </div>
             </div>
         `;
@@ -245,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
         infoDisplay.innerHTML = `
             <h2>Roles & Responsibilities</h2>
             <ul>
-                <li>1. Vice President in the College Cyber Security Club "Garuda Vigilance"</li>
+                <li>1. Chair Person in the College Cyber Security Club "Garuda Vigilance"</li>
                 <li>2. Volunteer in NSS Club</li>
                 <li>3. Member in Cyber Secured India Group</li>
                 <li>4. Member in R3X CTF Group</li>
