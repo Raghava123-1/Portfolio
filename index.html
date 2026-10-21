@@ -3,93 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V.Raghavendra Sai Portfolio</title>
-    <link rel="icon" type="image/png" href="assests/Photo2.jpg" class="iconn">
+    <title>V. Raghavendra Sai | Cyber Security Portfolio</title>
+    <meta name="description" content="Portfolio of Vuyyuru Raghavendra Sai - Cyber Security student, MERN stack developer and ethical hacker.">
+    <meta name="theme-color" content="#020503">
+    <link rel="canonical" href="https://raghava123-1.github.io/Portfolio/">
+
+    <!-- Social sharing (LinkedIn, WhatsApp, Facebook, Slack read Open Graph; X reads twitter:*) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="V. Raghavendra Sai">
+    <meta property="og:title" content="V. Raghavendra Sai | Cyber Security Portfolio">
+    <meta property="og:description" content="Cyber Security student, MERN stack developer and ethical hacker. Explore my certifications, projects and skills, or poke around the interactive terminal.">
+    <meta property="og:url" content="https://raghava123-1.github.io/Portfolio/">
+    <meta property="og:image" content="https://raghava123-1.github.io/Portfolio/assests/Photo3.jpg">
+    <meta property="og:image:alt" content="Portrait of Vuyyuru Raghavendra Sai">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="V. Raghavendra Sai | Cyber Security Portfolio">
+    <meta name="twitter:description" content="Cyber Security student, MERN stack developer and ethical hacker.">
+    <meta name="twitter:image" content="https://raghava123-1.github.io/Portfolio/assests/Photo3.jpg">
+
+    <link rel="icon" type="image/jpeg" href="assests/Photo2.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        document.documentElement.classList.add('js');
+        // apply a saved theme before first paint so there is no colour flash
+        try {
+            var t = localStorage.getItem('theme');
+            if (t) document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+    </script>
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
 </head>
-<body>
+<body class="intro-active">
 
-    <div class="video-container">
-        <video id="openingVideo" autoplay muted playsinline >
+    <!-- ============ INTRO ============ -->
+    <div id="intro" class="video-container" role="dialog" aria-label="Intro animation">
+        <video id="openingVideo" autoplay muted playsinline preload="auto">
             <source src="assests/11.mp4" type="video/mp4">
         </video>
-    <button id="skipButton">
-    <img src="icons/next (1).png" alt="Skip Icon" width="20" height="20">
-    </button>
+        <div class="intro-hud">
+            <span class="intro-label">&gt; BREACHING MAINFRAME<span class="dots"></span></span>
+            <div class="intro-bar"><i id="introBar"></i></div>
+        </div>
+        <button id="skipButton" type="button" aria-label="Skip intro">
+            <span>SKIP</span>
+            <img src="icons/next (1).png" alt="" width="18" height="18">
+        </button>
+    </div>
 
+    <!-- ============ BACKGROUND FX ============ -->
+    <div class="video-background" aria-hidden="true">
+        <video class="bg-video" src="assests/117804-713302202_small.mp4" autoplay loop muted playsinline></video>
     </div>
-    
-    <div class="video-background">
-        <video class="video1" src="assests/117804-713302202_small.mp4" autoplay loop muted></video>
-    </div>
-    <div class="container">
-        <header>
-            <h1>Vuyyuru Raghavendra Sai</h1>
-            <p id="dynamic-text" >Cyber Security Student</p>
+    <canvas id="matrix" aria-hidden="true"></canvas>
+    <div class="fx scanlines" aria-hidden="true"></div>
+    <div class="fx vignette" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div id="progress" aria-hidden="true"></div>
+
+    <!-- ============ NAV ============ -->
+    <nav class="nav" aria-label="Primary">
+        <a href="#home" class="brand"><span class="brand-bracket">[</span>RS<span class="brand-bracket">]</span><span class="brand-text">~/portfolio</span></a>
+        <ul class="nav-links">
+            <li><a href="#about" data-nav="about">about</a></li>
+            <li><a href="#courses" data-nav="courses">certs</a></li>
+            <li><a href="#education" data-nav="education">education</a></li>
+            <li><a href="#projects" data-nav="projects">projects</a></li>
+            <li><a href="#skills" data-nav="skills">skills</a></li>
+            <li><a href="#roles" data-nav="roles">roles</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <!-- ============ HERO ============ -->
+        <header id="home" class="hero">
+            <p class="hero-prompt reveal"><span class="prompt-user">root@kali</span>:<span class="prompt-path">~</span>$ whoami</p>
+            <h1 class="glitch reveal" data-text="Vuyyuru Raghavendra Sai">Vuyyuru Raghavendra Sai</h1>
+            <p class="hero-role reveal">&gt; <span id="dynamic-text">Cyber Security Student</span><span class="caret"></span></p>
+            <p class="hero-sub reveal">Breaking things ethically, building them securely.</p>
+
+            <div class="hero-cta reveal">
+                <a class="btn btn-primary" href="#projects">./view_projects</a>
+                <a class="btn" href="https://drive.google.com/file/d/10oaSiTrsPve_GT4AUMZRGyi-wNmx9ubp/view?usp=sharing" target="_blank" rel="noopener noreferrer">./resume.pdf</a>
+                <a class="btn" href="https://forms.gle/YicZp3o9ebAssAT27" target="_blank" rel="noopener noreferrer">./contact_me</a>
+                <button class="btn" type="button" data-open-terminal>&gt;_ terminal</button>
+            </div>
+
+            <div class="stats reveal">
+                <div class="stat"><b data-count="9.35" data-decimals="2">9.35</b><span>CGPA</span></div>
+                <div class="stat"><b data-count="12">12</b><span>Certifications</span></div>
+                <div class="stat"><b data-count="3">3</b><span>Projects</span></div>
+                <div class="stat"><b data-count="4">4</b><span>Communities</span></div>
+            </div>
+
+            <a href="#about" class="scroll-hint" aria-label="Scroll to about section"><span></span></a>
         </header>
+
+        <!-- ============ ABOUT ============ -->
         <section id="about">
-            <h2>1.About Me</h2>
+            <h2 class="section-title reveal"><span class="idx">01</span><span class="scramble">About Me</span></h2>
+            <div class="about-grid">
+                <div class="panel tilt reveal">
+                    <div class="panel-bar"><i></i><i></i><i></i><span>about.md</span></div>
+                    <div class="panel-body">
+                        <p>Hello! I am a dedicated and ambitious Computer Science student currently pursuing my BTech at VNRVJIET, with an expected graduation in 2026. My primary interest lies in Cyber Security, where I am driven by a passion for ethical hacking and protecting systems against cyber threats.</p>
+                        <p>I thrive on solving complex security challenges and am continuously expanding my knowledge in this ever-evolving field. My coursework and projects have given me a strong foundation in:</p>
+                        <ul class="tags" data-stagger>
+                            <li class="reveal">Network Security</li>
+                            <li class="reveal">Penetration Testing</li>
+                            <li class="reveal">Cryptography</li>
+                            <li class="reveal">Ethical Hacking</li>
+                            <li class="reveal">Security Protocols</li>
+                        </ul>
+                        <p>I am always eager to learn new technologies, participate in hackathons, and collaborate on innovative projects. My goal is to contribute to a safer digital world.</p>
+                        <p>Feel free to connect with me for discussions on cyber security, collaboration, or simply to network!</p>
+                    </div>
+                </div>
+                <div class="photo-wrap reveal">
+                    <div class="photo-ring">
+                        <img src="assests/Photo3.jpg" alt="Portrait of Vuyyuru Raghavendra Sai" class="about-photo" width="350" height="350" loading="lazy">
+                    </div>
+                    <p class="photo-tag">[ ACCESS GRANTED ]</p>
+                </div>
+            </div>
         </section>
+
+        <!-- ============ CERTIFICATIONS ============ -->
         <section id="courses">
-            <h2>2.Courses/Trainings & Certifications</h2>
+            <h2 class="section-title reveal"><span class="idx">02</span><span class="scramble">Courses / Trainings &amp; Certifications</span></h2>
+            <div class="cert-grid" data-stagger>
+                <a class="cert tilt reveal" href="https://drive.google.com/file/d/1mkEw4c8RDvFoPO9WwfgUOQPfFfc7sDB-/view?usp=sharing" target="_blank" rel="noopener noreferrer"><em>01</em><span>Google Cybersecurity Professional Certificate</span></a>
+                <a class="cert tilt reveal" href="https://drive.google.com/file/d/1Fxe-DALmdpNUBneqogNcUqJX5E-OpGfm/view?usp=sharing" target="_blank" rel="noopener noreferrer"><em>02</em><span>Smart Interviews Phase 1</span></a>
+                <a class="cert tilt reveal" href="https://drive.google.com/file/d/1jkgy2Ds4ScvYi23rFv523AjKmrpdkcjr/view?usp=sharing" target="_blank" rel="noopener noreferrer"><em>03</em><span>NPTEL Cloud Computing Course</span></a>
+                <a class="cert tilt reveal" href="https://drive.google.com/file/d/1U4v9Fi93doZCeeMcMxVZWhMtnmcRPXA9/view?usp=sharing" target="_blank" rel="noopener noreferrer"><em>04</em><span>Research Paper - International Conference on Emerging Trends in Intelligent Computing Techniques (ICETICT-2024)</span></a>
+                <a class="cert tilt reveal" href="https://drive.google.com/file/d/1D71Yih3fUKD_yb5D8bhZ4mdWMxf13EiA/view?usp=sharing" target="_blank" rel="noopener noreferrer"><em>05</em><span>Tata Group Cybersecurity Analyst Completion Certificate</span></a>
+                <a class="cert tilt reveal" href="https://drive.google.com/file/d/1AEqqndEuFD8qK2WxawSH__kxPLRvivU4/view?usp=sharing" target="_blank" rel="noopener noreferrer"><em>06</em><span>CDAC - Pragmatic Approach to Cyber Security</span></a>
+                <a class="cert tilt reveal" href="https://drive.google.com/file/d/1WE4FLbeBBq1KItb6GVWgDHf4DM0_tbhY/view?usp=sharing" target="_blank" rel="noopener noreferrer"><em>07</em><span>VNR Cyber Warzone 2.0</span></a>
+                <a class="cert tilt reveal" href="https://drive.google.com/file/d/1lU-EZ0x1rLfeYatMrqau-qJUwviTwe7g/view?usp=sharing" target="_blank" rel="noopener noreferrer"><em>08</em><span>Cybersecurity Fundamentals by IBM SkillsBuild</span></a>
+                <a class="cert tilt reveal" href="https://www.credly.com/badges/590868e7-5c3c-4099-bfd7-62191ff301c5/public_url" target="_blank" rel="noopener noreferrer"><em>09</em><span>Google AI Essentials</span></a>
+                <a class="cert tilt reveal" href="https://drive.google.com/file/d/15rWE0gW-rXphItkEcFZog3iAejDiJ5Yh/view?usp=sharing" target="_blank" rel="noopener noreferrer"><em>10</em><span>The Indo-Dutch Cyber Security School, seventh edition</span></a>
+                <a class="cert tilt reveal" href="https://drive.google.com/file/d/180RZjabL_te5KU_ZwJ4yZJK3fWbOl2_u/view?usp=sharing" target="_blank" rel="noopener noreferrer"><em>11</em><span>Nexus Elites CTF 2024</span></a>
+                <a class="cert tilt reveal" href="https://drive.google.com/file/d/1TUFiqH-sIwWLMODO63HMQ6E98sWVODxb/view?usp=sharing" target="_blank" rel="noopener noreferrer"><em>12</em><span>Cyber Suraksha - Tata Strive &amp; Microsoft</span></a>
+            </div>
         </section>
+
+        <!-- ============ EDUCATION ============ -->
         <section id="education">
-            <h2>3.Education Details</h2>
+            <h2 class="section-title reveal"><span class="idx">03</span><span class="scramble">Education Details</span></h2>
+            <div class="timeline" data-stagger>
+                <article class="tl-item reveal">
+                    <span class="tl-dot"></span>
+                    <div class="panel tilt">
+                        <h3>B.Tech &mdash; CSE (Cyber Security)</h3>
+                        <p class="tl-place">VNR VJIET, Hyderabad</p>
+                        <p class="tl-meta"><span>3rd Year</span><span>CGPA 9.35</span></p>
+                    </div>
+                </article>
+                <article class="tl-item reveal">
+                    <span class="tl-dot"></span>
+                    <div class="panel tilt">
+                        <h3>Intermediate</h3>
+                        <p class="tl-place">Narayana Jr College, Vijayawada</p>
+                        <p class="tl-meta"><span>97.6%</span></p>
+                    </div>
+                </article>
+                <article class="tl-item reveal">
+                    <span class="tl-dot"></span>
+                    <div class="panel tilt">
+                        <h3>School</h3>
+                        <p class="tl-place">Excellent E/M High School, Manuguru</p>
+                        <p class="tl-meta"><span>Grade 10</span></p>
+                    </div>
+                </article>
+            </div>
         </section>
+
+        <!-- ============ PROJECTS ============ -->
         <section id="projects">
-            <h2>4.Projects/Documentations</h2>
+            <h2 class="section-title reveal"><span class="idx">04</span><span class="scramble">Projects / Documentations</span></h2>
+            <div class="project-grid" data-stagger>
+                <article class="project-card tilt reveal">
+                    <span class="badge">web</span>
+                    <h3>Smart Agro - Weather Alert Website</h3>
+                    <p>Website which sends alerts to farmers by call and notifications on bad weather 24 hours in advance.</p>
+                </article>
+                <article class="project-card tilt reveal">
+                    <span class="badge">security</span>
+                    <h3>Secured QR Generator</h3>
+                    <p>Step-authentication type of security for QR codes.</p>
+                </article>
+                <article class="project-card tilt reveal">
+                    <span class="badge badge-live">in development</span>
+                    <h3>Fields2Fork App</h3>
+                    <p>A mobile app for direct market access for farmers, connecting them with consumers and retailers to manage transactions.</p>
+                </article>
+                <article class="project-card project-redacted tilt reveal">
+                    <span class="badge">classified</span>
+                    <h3>Cyber Security Projects</h3>
+                    <p>Cyber Security projects will be displayed soon<span class="dots"></span></p>
+                </article>
+            </div>
         </section>
+
+        <!-- ============ SKILLS ============ -->
         <section id="skills">
-            <h2>5.Skills</h2>
+            <h2 class="section-title reveal"><span class="idx">05</span><span class="scramble">Skills</span></h2>
+            <div class="skills-grid" data-stagger>
+                <div class="skill-cat panel reveal">
+                    <h3>Scripting Languages</h3>
+                    <ul class="skill-list">
+                        <li><img src="icons/html5-logo-240.png" alt="" loading="lazy">HTML</li>
+                        <li><img src="icons/css3-logo-240.png" alt="" loading="lazy">CSS</li>
+                        <li><img src="icons/bootstrap-logo-240.png" alt="" loading="lazy">Bootstrap</li>
+                    </ul>
+                </div>
+                <div class="skill-cat panel reveal">
+                    <h3>Frameworks</h3>
+                    <ul class="skill-list">
+                        <li><img src="icons/flask-logo-240.png" alt="" loading="lazy">Flask</li>
+                        <li><img src="icons/icons8-express-js-480.png" alt="" loading="lazy">Express.js</li>
+                        <li><img src="icons/react-logo-240.png" alt="" loading="lazy">React.js</li>
+                        <li><img src="icons/nodejs-logo-240.png" alt="" loading="lazy">Node.js</li>
+                    </ul>
+                </div>
+                <div class="skill-cat panel reveal">
+                    <h3>Programming Languages</h3>
+                    <ul class="skill-list">
+                        <li><img src="icons/letter-c.png" alt="" loading="lazy">C</li>
+                        <li><img src="icons/c-plus-plus-logo-240.png" alt="" loading="lazy">C++</li>
+                        <li><img src="icons/python-logo-240.png" alt="" loading="lazy">Python</li>
+                        <li><img src="icons/javascript-logo-240.png" alt="" loading="lazy">JavaScript</li>
+                        <li><img src="icons/java-logo-240.png" alt="" loading="lazy">Java</li>
+                    </ul>
+                </div>
+                <div class="skill-cat panel reveal">
+                    <h3>Databases</h3>
+                    <ul class="skill-list">
+                        <li><img src="icons/sql (1).png" alt="" loading="lazy">SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-cat panel reveal">
+                    <h3>Version Control</h3>
+                    <ul class="skill-list">
+                        <li><img src="icons/git-logo-240.png" alt="" loading="lazy">Git</li>
+                        <li><img src="icons/github-logo-240.png" alt="" loading="lazy">GitHub</li>
+                    </ul>
+                </div>
+                <div class="skill-cat panel reveal">
+                    <h3>Operating Systems</h3>
+                    <ul class="skill-list">
+                        <li><img src="icons/icons8-windows-250.png" alt="" loading="lazy">Windows 11</li>
+                        <li><img src="icons/windows-logo-240.png" alt="" loading="lazy">Windows 10</li>
+                        <li><img src="icons/icons8-kali-linux-240.png" alt="" loading="lazy">Kali</li>
+                        <li><img src="icons/linux.png" alt="" loading="lazy">Linux</li>
+                    </ul>
+                </div>
+            </div>
         </section>
+
+        <!-- ============ ROLES ============ -->
         <section id="roles">
-            <h2>6.Roles & Responsibilities</h2>
+            <h2 class="section-title reveal"><span class="idx">06</span><span class="scramble">Roles &amp; Responsibilities</span></h2>
+            <ul class="roles-list" data-stagger>
+                <li class="role panel tilt reveal"><em>01</em>Chair Person in the College Cyber Security Club "Garuda Vigilance"</li>
+                <li class="role panel tilt reveal"><em>02</em>Volunteer in NSS Club</li>
+                <li class="role panel tilt reveal"><em>03</em>Member in Cyber Secured India Group</li>
+                <li class="role panel tilt reveal"><em>04</em>Member in R3X CTF Group</li>
+            </ul>
         </section>
-        <div class="terminal">
-            <div id="terminal-content">
-                <div>Welcome to Vuyyuru Raghavendra Sai's Cyber Security Portfolio</div>
-                <div>Select an option by typing the number:</div>
+
+    </main>
+
+    <!-- ============ TERMINAL LAUNCHER (left dock) + DRAWER ============ -->
+    <button id="term-toggle" class="term-toggle" type="button" aria-expanded="false" aria-controls="term-drawer" aria-label="Open interactive terminal">
+        <svg class="term-svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+        <span class="term-label">terminal</span>
+    </button>
+    <div id="term-hint" class="term-hint" aria-hidden="true">&gt; psst... try the terminal</div>
+
+    <div id="term-backdrop" class="term-backdrop" aria-hidden="true"></div>
+    <div id="term-drawer" class="term-drawer" role="dialog" aria-label="Interactive terminal" aria-hidden="true">
+        <div class="terminal" id="terminal-box">
+            <div class="panel-bar">
+                <i></i><i></i><i></i><span>raghava@portfolio: ~</span>
+                <button type="button" id="term-sound" class="t-snd" style="margin-left:auto" aria-pressed="false" aria-label="Toggle keystroke sound">sound: off</button>
+                <button type="button" id="term-close" class="term-close" aria-label="Close terminal">esc &times;</button>
             </div>
-            <div class="input-line">
+            <div class="terminal-body" id="terminal-content" role="log" aria-live="polite"></div>
+            <div class="chips" id="terminal-chips" aria-label="Quick commands"></div>
+            <label class="input-line">
                 <span class="prompt">raghava@portfolio:~$</span>
-                <input type="text" id="terminal-input" autofocus>
-            </div>
+                <input type="text" id="terminal-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal input" placeholder="type 'help' or a number...">
+            </label>
         </div>
-        <div id="info-display">
-            
-        </div>
-        
-        <aside class="contact-icons">
-            <a href="https://www.linkedin.com/in/raghavendra-sai-01858b27b/" target="_blank" data-name="LinkedIn">
-                <img src="icons/linkedin-square-logo-240.png" alt="LinkedIn">
-                
-            </a>
-            <a href="https://github.com/Raghava123-1" target="_blank" data-name="GitHub">
-                <img src="icons/github-logo-240.png" alt="GitHub">
-                
-            </a>
-            <a href="mailto:vuyyururaghavendrasai@gmail.com" data-name="Email">
-                <img src="icons/gmail-logo-240.png" alt="Email">
-                
-            </a>
-            <a href="https://wa.me/9059494181" target="_blank" data-name="WhatsApp">
-                <img src="icons/whatsapp-logo-240.png" alt="WhatsApp">
-                
-            </a>
-            <a href="https://www.instagram.com/_._raghava_._/" target="_blank" data-name="Instagram">
-                <img src="icons/instagram-logo-240.png" alt="Instagram">
-                
-            </a>
-            <a href="https://drive.google.com/file/d/10oaSiTrsPve_GT4AUMZRGyi-wNmx9ubp/view?usp=sharing" target="_blank" data-name="Resume">
-                <img src="icons/file-doc-solid-240 (1).png" alt="CV">
-                
-            </a>
-            <a href="https://forms.gle/YicZp3o9ebAssAT27" target="_blank" data-name="Contact Me">
-                <img src="icons/google-forms.png" alt="Google Form">
-                
-            </a>
-        </aside>
-  
+    </div>
+
+    <!-- ============ CONTACT DOCK ============ -->
+    <aside class="contact-icons" aria-label="Contact links">
+        <a href="https://www.linkedin.com/in/raghavendra-sai-01858b27b/" target="_blank" rel="noopener noreferrer" data-name="LinkedIn"><img src="icons/linkedin-square-logo-240.png" alt="LinkedIn"></a>
+        <a href="https://github.com/Raghava123-1" target="_blank" rel="noopener noreferrer" data-name="GitHub"><img src="icons/github-logo-240.png" alt="GitHub"></a>
+        <button type="button" class="copy-mail" data-name="Copy email" data-email="vuyyururaghavendrasai@gmail.com" aria-label="Copy email address">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+        </button>
+        <a href="mailto:vuyyururaghavendrasai@gmail.com" data-name="Email"><img src="icons/gmail-logo-240.png" alt="Email"></a>
+        <a href="https://wa.me/9059494181" target="_blank" rel="noopener noreferrer" data-name="WhatsApp"><img src="icons/whatsapp-logo-240.png" alt="WhatsApp"></a>
+        <a href="https://www.instagram.com/_._raghava_._/" target="_blank" rel="noopener noreferrer" data-name="Instagram"><img src="icons/instagram-logo-240.png" alt="Instagram"></a>
+        <a href="https://drive.google.com/file/d/10oaSiTrsPve_GT4AUMZRGyi-wNmx9ubp/view?usp=sharing" target="_blank" rel="noopener noreferrer" data-name="Resume"><img src="icons/file-doc-solid-240 (1).png" alt="Resume"></a>
+        <a href="https://forms.gle/YicZp3o9ebAssAT27" target="_blank" rel="noopener noreferrer" data-name="Contact Me"><img src="icons/google-forms.png" alt="Contact form"></a>
+    </aside>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <footer class="footer">
+        <p>&copy; <span id="year">2025</span> Vuyyuru Raghavendra Sai &middot; <span class="muted">connection secure // session encrypted</span></p>
+    </footer>
+
 </body>
 </html>
